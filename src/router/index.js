@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Dashboard from '../components/Dashboard'
-import Keysets from '../components/Keysets'
+import Dashboard from '../pages/Dashboard'
+import Keysets from '../pages/Keysets'
 
 Vue.use(Router)
 
