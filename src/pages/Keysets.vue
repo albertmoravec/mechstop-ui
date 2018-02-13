@@ -6,7 +6,7 @@
     <el-table-column label="Profile" prop="profile.name"></el-table-column>
     <el-table-column label="Colours">
       <template slot-scope="scope">
-        <color-box style="margin: 1px" v-for="(color, index) in scope.row.colours.slice(0,3)" :key="index" :color="color.hexValue"></color-box>
+        <color-box style="margin: 1px" v-for="(color, index) in scope.row.colors.slice(0,3)" :key="index" :color="color.hexValue"></color-box>
       </template>
     </el-table-column>
   </el-table>
