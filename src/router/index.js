@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Dashboard from '../pages/Dashboard'
 import Keysets from '../pages/Keysets'
+import Manufacturers from '../pages/Manufacturers'
+import Profiles from '../pages/Profiles'
+import Materials from '../pages/Materials'
+import Colors from '../pages/Colors'
 
 Vue.use(Router)
 
@@ -25,28 +29,32 @@ export default new Router({
       },
     },
     {
-      path: 'manufacturers',
+      path: '/manufacturers',
+      component: Manufacturers,
       meta: {
         title: 'Manufacturers',
         icon: 'el-icon-setting'
       }
     },
     {
-      path: 'colours',
+      path: '/colors',
+      component: Colors,
       meta: {
-        title: 'Colours',
+        title: 'Colors',
         icon: 'el-icon-edit'
       }  
     },
     {
-      path: 'materials',
+      path: '/materials',
+      component: Materials,
       meta: {
         title: 'Materials',
         icon: 'el-icon-news'
       }
     },
     {
-      path: 'profiles',
+      path: '/profiles',
+      component: Profiles,
       meta: {
         title: 'Profiles',
         icon: 'el-icon-edit-outline'

@@ -1,44 +1,47 @@
 <template>
-  <div id="border">
-      <div id="box" :style="colorStyle"></div>
-  </div>
+<div>
+  <el-popover v-if="popup" ref="popover" placement="top" trigger="hover" popper-class="color-popper"><slot></slot></el-popover>
+    <div v-if="popup" v-popover:popover id="box" :style="colorStyle"></div>
+    <div v-else id="box" :style="colorStyle"></div>
+</div>
 </template>
 
 <script>
 export default {
-    name: 'color-box',
-    props: {
-        color: {
-            type: String,
-            required: true,
-            validator: function(value) {
-                return value.length >= 3 && value.length <= 6 
-            }
-        }
+  name: "color-box",
+  props: {
+    popup: {
+      type: Boolean,
+      default: false
     },
-    computed: {
-        colorStyle() {
-            return  {
-                backgroundColor: this.color
-            }
-        }
+    color: {
+      type: String,
+      required: true,
+      validator: function(value) {
+        return value.length === 4 || value.length === 7;
+      }
     }
-}
+  },
+  computed: {
+    colorStyle() {
+      return {
+        backgroundColor: this.color
+      };
+    }
+  }
+};
 </script>
 
-<style scoped>
-#border {
-    height: 25px;
-    width: 25px;
-    display: inline-block;
-    border: 1px solid #e6e6e6;
-    border-radius: 4px; 
-    padding: 2px;
+<style>
+#box {
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+  border: 2px solid #e6e6e6;
 }
 
-#box {
-    height: 100%;
-    width: 100%;
-    border-radius: 2px; 
+.color-popper {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
 }
 </style>
